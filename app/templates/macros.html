@@ -1,0 +1,11 @@
+{% macro render_breadcrumbs(data) %}
+    <ol class="breadcrumb">
+        {% for item in data %}
+            {% if item.active %}
+                <li class="active">{{ item.title }}</li>
+            {% else %}
+                <li><a href="{{ url_for(item.endpoint) }}">{{ item.title }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+{%- endmacro %}

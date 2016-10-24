@@ -1,0 +1,40 @@
+{% extends 'layout/master.html' %}
+
+{% from "macros.html" import render_breadcrumbs %}
+
+{% block title %}Listings - Edit{% endblock %}
+
+{% block page_header %}Property Listings - Edit{% endblock %}
+
+{% block breadcrumbs %}
+    {% set breadcrumbs_data = [{'title':'Listings', 'endpoint': 'managers.index', 'active': False},
+                               {'title':'edit', 'active': True}] %}
+    {{ render_breadcrumbs(breadcrumbs_data) }}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Edit listing</h3>
+                </div>
+
+                {% include 'listings/_form.html' %}
+
+                {% include 'listings/_form_manager_modal.html' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/listings.js') }}"></script>
+
+    <script>
+        $(function () {
+            // Превращение полей в поля с подсказками
+            typeaheadFields($("#city_id").val());
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'layout/master.html' %}
+
+{% block title %}Listings index{% endblock %}
+
+{% block page_header %}Listings{% endblock %}
+
+{% from "macros.html" import render_breadcrumbs %}
+{% block breadcrumbs %}
+    {% set breadcrumbs_data = [{'title': 'Listings', 'endpoint': 'listings.index', 'active': False},
+                               {'title': 'index', 'active': True}] %}
+    {{ render_breadcrumbs(breadcrumbs_data) }}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Listings list</h3>
+                </div>
+                <div class="box-body">
+                    <p><a href="{{ url_for('listings.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Create</a></p>
+                    <table id="data-listings" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>City</th>
+                                <th>Street name</th>
+                                <th>Street number</th>
+                                <th>Suburb</th>
+                                <th>Bedrooms</th>
+                                <th>Agent name</th>
+                                <th>Agent phone</th>
+                                <th>Government value</th>
+                                <th>Last update at</th>
+                                <th>Created at</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/listings.js') }}"></script>
+{% endblock %}

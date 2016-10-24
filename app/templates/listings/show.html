@@ -1,0 +1,69 @@
+{% extends 'layout/master.html' %}
+
+{% block title %}Listings - show details{% endblock %}
+
+{% block page_header %}Listing - show details{% endblock %}
+
+{% from "macros.html" import render_breadcrumbs %}
+{% block breadcrumbs %}
+    {% set breadcrumbs_data = [{'title': 'Listings', 'endpoint': 'listings.index', 'active': False},
+                               {'title': 'show', 'active': True}] %}
+    {{ render_breadcrumbs(breadcrumbs_data) }}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Listing details</h3>
+                </div>
+                <div class="box-body">
+                    <dl class="dl-horizontal">
+                        <dt>ID</dt>
+                        <dd>{{ listing.id }}</dd>
+                        <dt>City</dt>
+                        <dd>{{ listing.city.title }}</dd>
+                        <dt>Street name</dt>
+                        <dd>{{ listing.street_address }}</dd>
+                        <dt>Street number</dt>
+                        <dd>{{ listing.street_number }}</dd>
+                        <dt>Suburb</dt>
+                        <dd>{{ listing.suburb }}</dd>
+                        <dt>Property type</dt>
+                        <dd>{{ listing.property_type }}</dd>
+                        <dt>Bedrooms</dt>
+                        <dd>{{ listing.bedrooms }}</dd>
+                        <dt>Government value</dt>
+                        <dd>{{ listing.government_value }}</dd>
+                        <dt>Current rates</dt>
+                        <dd>{{ listing.current_rates }}</dd>
+                        <dt>Median rent qv</dt>
+                        <dd>{{ listing.median_rent_qv }}</dd>
+                        <dt>Capital growth</dt>
+                        <dd>{{ listing.capital_growth  }}</dd>
+                        <dt>Median rent tb</dt>
+                        <dd>{{ listing.median_rent_tb  }}</dd>
+                        <dt>Agent name</dt>
+                        <dd>{{ listing.agent.name  }}</dd>
+                        <dt>Agent phone</dt>
+                        <dd>{{ listing.agent.phone_numbers  }}</dd>
+                        <dt>Agent email</dt>
+                        <dd>{{ listing.agent.email  }}</dd>
+                        <dt>Manager name</dt>
+                        <dd>{{ listing.manager.name  }}</dd>
+                        <dt>Manager phone</dt>
+                        <dd>{{ listing.manager.phone_numbers  }}</dd>
+                        <dt>Manager email</dt>
+                        <dd>{{ listing.manager.email  }}</dd>
+                    </dl>
+                </div>
+                <div class="box-footer">
+                    <a href="{{ url_for('listings.edit', listing_id=listing.id) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
+                    <a href="{{ url_for('listings.delete', listing_id=listing.id) }}" class="btn btn-danger delete"><i class="fa fa-remove"></i> Delete</a>
+                    <a href="{{ url_for('listings.index') }}" class="btn btn-warning">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

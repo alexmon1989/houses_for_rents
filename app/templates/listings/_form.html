@@ -1,0 +1,26 @@
+{% from "_formhelpers.html" import render_field %}
+
+<form role="form" method="post" autocomplete="off" id="listing-form">
+    <div class="box-body">
+        {{ render_field(form.city_id, class_='form-control select2') }}
+        {{ render_field(form.street_number) }}
+        {{ render_field(form.street_address, data_provide="typeahead") }}
+        {{ render_field(form.suburb, data_provide="typeahead") }}
+        {{ render_field(form.property_type, class_='form-control select2') }}
+        {{ render_field(form.bedrooms, class_='form-control select2') }}
+        {{ render_field(form.government_value) }}
+        {{ render_field(form.current_rates) }}
+        {{ render_field(form.median_rent_qv) }}
+        {{ render_field(form.capital_growth) }}
+        {{ render_field(form.median_rent_tb) }}
+        {{ render_field(form.agent_name, data_provide="typeahead") }}
+        {{ render_field(form.agent_phone, data_provide="typeahead") }}
+        {{ render_field(form.agent_email, data_provide="typeahead") }}
+        {{ render_field(form.appraised_by, data_provide="typeahead") }}
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer">
+        <button type="button" id="listing-form-submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+        <a class="btn btn-danger" href="{{ url_for('listings.index') }}"><i class="fa fa-close"></i> Cancel</a>
+    </div>
+</form>

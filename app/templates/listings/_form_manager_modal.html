@@ -1,0 +1,36 @@
+{% from "_formhelpers.html" import render_field %}
+<div class="modal" id="manager-modal-form">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Create new manager</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-yellow">Manager was not found in database. Please, create new manager:</p>
+                <div id="manager-modal-form-errors" class="text-red"></div>
+                <form role="form" method="post" autocomplete="off" id="listing-form" action="{{ url_for('managers.create') }}">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input class="form-control" id="manager_name" placeholder="Name" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input class="form-control" id="manager_phone" placeholder="Phone" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input class="form-control" id="manager_email" placeholder="Email" type="text">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="manager-form-submit"><i class="fa fa-save"></i> Save</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Инсталляция &#8212; Документация houses for rent 0.0.1</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="top" title="Документация houses for rent 0.0.1" href="index.html" />
+    <link rel="next" title="База данных" href="database.html" />
+    <link rel="prev" title="Общая информация" href="total_information.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="database.html" title="База данных"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="total_information.html" title="Общая информация"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация houses for rent 0.0.1</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>Инсталляция<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Данное руководство описывает установку приложения на сервер, но не настройку Web-сервера.
+Поскольку в качестве Web-сервера можно использовать различное программное обеспечение, то подразумевается,
+что настройка будет производится системным администратором. Руководства по настройке от разработчиков фреймворка <strong>Flask</strong>
+можно посмотреть <a class="reference external" href="http://flask.pocoo.org/docs/0.11/deploying/">тут</a>.</p>
+<p>Установку условно можно разделить на несколько этапов:</p>
+<div class="section" id="git">
+<h2>Клонирование git-репозитория<a class="headerlink" href="#git" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Репозиторий проекта находится по адресу: <a class="reference external" href="https://github.com/alexmon1989/houses_for_rents/">https://github.com/alexmon1989/houses_for_rents/</a>.</p>
+<p>Перейдите в каталог, где будет располагаться ваш проект, и выполните команду:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>git clone https://github.com/alexmon1989/houses_for_rents.git
+</pre></div>
+</div>
+</div>
+<div class="section" id="python">
+<h2>Создание виртуального окружения Python<a class="headerlink" href="#python" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Перейдите к каталог проекта:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> house_for_rents
+</pre></div>
+</div>
+<p>Установите пакет virtualenv:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo pip3 install virtualenv
+</pre></div>
+</div>
+<p>Создайте виртуальное окружение:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>virtualenv .env
+</pre></div>
+</div>
+<p>Активируйте его:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">source</span> .env/bin/activate
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>Установка Python библиотек<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Установка библиотек для проекта производится командой:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pip3 install -r requirements.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Настройка конфигурационного файла<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Переименуйте файл <em>config.py.example</em> в <em>config.py</em>.</p>
+</div>
+<div class="section" id="id5">
+<h2>Создание базы данных<a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Испозьзуя любой доступный способ, создайте БД с параметрами:</p>
+<div class="line-block">
+<div class="line"><strong>Character set</strong>: utf8 &#8211; UTF-8 Unicode</div>
+<div class="line"><strong>Collation</strong>: utf8_unicode_ci</div>
+</div>
+</div>
+<div class="section" id="mysql">
+<h2>Настройка подключения к MySQL<a class="headerlink" href="#mysql" title="Ссылка на этот заголовок">¶</a></h2>
+<p>В файле <em>config.py</em> найдите строку:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">SQLALCHEMY_DATABASE_URI</span> <span class="o">=</span> <span class="s1">&#39;mysql+pymysql://user:password@localhost/houses_for_rent&#39;</span>
+</pre></div>
+</div>
+<p>И замените:</p>
+<div class="line-block">
+<div class="line"><strong>user</strong>: имя пользователя БД;</div>
+<div class="line"><strong>password</strong>: пароль пользователя БД;</div>
+<div class="line"><strong>localhost</strong>: IP-адрес БД;</div>
+<div class="line"><strong>houses_for_rent</strong>: название БД.</div>
+</div>
+<p>После этого сохраните файл.</p>
+</div>
+<div class="section" id="id6">
+<h2>Применение миграций<a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Для создания структуры БД необходимо воспользоваться механизмом миграций. Для этого выполните команду:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>python3 manage.py migrate upgrade
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>Наполнение базы данных начальными данными<a class="headerlink" href="#id7" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Для наполнения выполните команду:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>python3 seeder.py
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Инсталляция</a><ul>
+<li><a class="reference internal" href="#git">Клонирование git-репозитория</a></li>
+<li><a class="reference internal" href="#python">Создание виртуального окружения Python</a></li>
+<li><a class="reference internal" href="#id3">Установка Python библиотек</a></li>
+<li><a class="reference internal" href="#id4">Настройка конфигурационного файла</a></li>
+<li><a class="reference internal" href="#id5">Создание базы данных</a></li>
+<li><a class="reference internal" href="#mysql">Настройка подключения к MySQL</a></li>
+<li><a class="reference internal" href="#id6">Применение миграций</a></li>
+<li><a class="reference internal" href="#id7">Наполнение базы данных начальными данными</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="total_information.html"
+                        title="предыдущая глава">Общая информация</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="database.html"
+                        title="следующая глава">База данных</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/installation.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Искать" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="database.html" title="База данных"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="total_information.html" title="Общая информация"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация houses for rent 0.0.1</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Alexandr Monastyretsky.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
+    </div>
+  </body>
+</html>

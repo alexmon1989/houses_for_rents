@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Модуль Cities &#8212; Документация houses for rent 0.0.1</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="top" title="Документация houses for rent 0.0.1" href="index.html" />
+    <link rel="next" title="Модели" href="models.html" />
+    <link rel="prev" title="Модуль Managers" href="managers.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="models.html" title="Модели"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="managers.html" title="Модуль Managers"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация houses for rent 0.0.1</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="cities">
+<h1>Модуль Cities<a class="headerlink" href="#cities" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="id1">
+<h2>Модель<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Основной моделью модуля является <a class="reference internal" href="models.html#city-model"><span class="std std-ref">Модель City</span></a>.</p>
+</div>
+<div class="section" id="id2">
+<h2>Контроллер<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Исходный код контроллера модуля расположен в файле <em>app/blueprints/cities/views.py</em>.</p>
+<p>Методы контроллера:</p>
+<span class="target" id="module-app.blueprints.cities.views"></span><dl class="function">
+<dt id="app.blueprints.cities.views.create">
+<code class="descclassname">app.blueprints.cities.views.</code><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.cities.views.create" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Действие для отображения страницы и создания города.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.blueprints.cities.views.delete">
+<code class="descclassname">app.blueprints.cities.views.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>city_id</em><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.cities.views.delete" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Действие для удаления гогрода.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>city_id</strong> (<em>int</em>) &#8211; id города в таблице <em>cities</em></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.blueprints.cities.views.edit">
+<code class="descclassname">app.blueprints.cities.views.</code><code class="descname">edit</code><span class="sig-paren">(</span><em>city_id</em><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.cities.views.edit" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Действие для отображения страницы и редактирования города.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>city_id</strong> (<em>int</em>) &#8211; id города в таблице <em>cities</em></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.blueprints.cities.views.index">
+<code class="descclassname">app.blueprints.cities.views.</code><code class="descname">index</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.cities.views.index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Действие для отображения страницы со списком городов.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h2>Шаблоны<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Шаблоны модуля расположены в каталоге <em>app/templates/cities</em>.</p>
+</div>
+<div class="section" id="id4">
+<h2>Формы<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Форма для добавления и редактирования листинга описывается классом <strong>CityForm</strong> в файле <em>app/blueprints/cities/forms.py</em>.
+Этот класс отвечает также за валидацию введённых пользователем данных.</p>
+<span class="target" id="module-app.blueprints.cities.forms"></span><dl class="class">
+<dt id="app.blueprints.cities.forms.CityForm">
+<em class="property">class </em><code class="descclassname">app.blueprints.cities.forms.</code><code class="descname">CityForm</code><span class="sig-paren">(</span><em>formdata=None</em>, <em>obj=None</em>, <em>prefix=''</em>, <em>data=None</em>, <em>meta=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.cities.forms.CityForm" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Класс для генерации и валидации формы добавления/редактирования горола.</p>
+<dl class="docutils">
+<dt>Атрибуты:</dt>
+<dd><ul class="first last simple">
+<li>title: Поле Title.</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="app.blueprints.cities.forms.UniqueValidator">
+<em class="property">class </em><code class="descclassname">app.blueprints.cities.forms.</code><code class="descname">UniqueValidator</code><span class="sig-paren">(</span><em>model</em>, <em>field</em>, <em>message=None</em><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.cities.forms.UniqueValidator" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Валидатор для проверки значения поля на уникальность.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Модуль Cities</a><ul>
+<li><a class="reference internal" href="#id1">Модель</a></li>
+<li><a class="reference internal" href="#id2">Контроллер</a></li>
+<li><a class="reference internal" href="#id3">Шаблоны</a></li>
+<li><a class="reference internal" href="#id4">Формы</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="managers.html"
+                        title="предыдущая глава">Модуль Managers</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="models.html"
+                        title="следующая глава">Модели</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/cities.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Искать" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="models.html" title="Модели"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="managers.html" title="Модуль Managers"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация houses for rent 0.0.1</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Alexandr Monastyretsky.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+{% extends 'layout/master.html' %}
+
+{% block title %}Real Estate agents - Edit{% endblock %}
+
+{% block page_header %}Real Estate agents - Edit{% endblock %}
+
+{% from "macros.html" import render_breadcrumbs %}
+{% block breadcrumbs %}
+    {% set breadcrumbs_data = [{'title': 'Agents', 'endpoint': 'agents.index', 'active': False},
+                               {'title': 'edit', 'active': True}] %}
+    {{ render_breadcrumbs(breadcrumbs_data) }}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Edit agent</h3>
+                </div>
+
+                {% include 'agents/_form.html' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(function () {
+            $(".select2").select2();
+
+            $.get('{{ url_for('agents.get_agencies') }}', function(data){
+                $("#agency").typeahead({ source: data });
+            },'json');
+        });
+    </script>
+{% endblock %}

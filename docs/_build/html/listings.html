@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Модуль Listings &#8212; Документация houses for rent 0.0.1</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="top" title="Документация houses for rent 0.0.1" href="index.html" />
+    <link rel="next" title="Модуль Agents" href="agents.html" />
+    <link rel="prev" title="База данных" href="database.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="agents.html" title="Модуль Agents"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="database.html" title="База данных"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация houses for rent 0.0.1</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="listings">
+<h1>Модуль Listings<a class="headerlink" href="#listings" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="id1">
+<h2>Модель<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Основной моделью модуля является <a class="reference internal" href="models.html#listing-model"><span class="std std-ref">Модель Listing</span></a>.</p>
+</div>
+<div class="section" id="id2">
+<h2>Контроллер<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Исходный код контроллера модуля расположен в файле <em>app/blueprints/listings/views.py</em>.</p>
+<p>Методы контроллера:</p>
+<span class="target" id="module-app.blueprints.listings.views"></span><dl class="function">
+<dt id="app.blueprints.listings.views.create">
+<code class="descclassname">app.blueprints.listings.views.</code><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.listings.views.create" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Действие для отображения страницы и создания листинга.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.blueprints.listings.views.data">
+<code class="descclassname">app.blueprints.listings.views.</code><code class="descname">data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.listings.views.data" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает данные для Jquery DataTables.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.blueprints.listings.views.delete">
+<code class="descclassname">app.blueprints.listings.views.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>listing_id</em><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.listings.views.delete" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Действие для удаления листинга.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>listing_id</strong> (<em>int</em>) &#8211; id листинга в таблице <em>listings</em></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.blueprints.listings.views.edit">
+<code class="descclassname">app.blueprints.listings.views.</code><code class="descname">edit</code><span class="sig-paren">(</span><em>listing_id</em><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.listings.views.edit" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Действие для отображения страницы и редактирования листинга.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>listing_id</strong> (<em>int</em>) &#8211; id листинга в таблице <em>listings</em></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.blueprints.listings.views.get_street_addresses">
+<code class="descclassname">app.blueprints.listings.views.</code><code class="descname">get_street_addresses</code><span class="sig-paren">(</span><em>city_id</em><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.listings.views.get_street_addresses" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает json с названиями улиц (поле <em>listings.street_address</em>) в городе <em>city_id</em>.
+Используется для автоподсказок в форме создания/редактирования листинга.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>city_id</strong> &#8211; Идентификатор города в таблице <em>cities</em>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Результат:</th><td class="field-body">json</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.blueprints.listings.views.get_suburbs">
+<code class="descclassname">app.blueprints.listings.views.</code><code class="descname">get_suburbs</code><span class="sig-paren">(</span><em>city_id</em><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.listings.views.get_suburbs" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает json со значениями поля <em>listings.street_address</em> для города <em>city_id</em>.
+Используется для автоподсказок в форме создания/редактирования листинга.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>city_id</strong> &#8211; Идентификатор города в таблице <em>cities</em>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Результат:</th><td class="field-body">json</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.blueprints.listings.views.index">
+<code class="descclassname">app.blueprints.listings.views.</code><code class="descname">index</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.listings.views.index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Действие для отображения страницы со списком листингов.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.blueprints.listings.views.show">
+<code class="descclassname">app.blueprints.listings.views.</code><code class="descname">show</code><span class="sig-paren">(</span><em>listing_id</em><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.listings.views.show" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Действие для отображения страницы отображения деталей листинга.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h2>Шаблоны<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Шаблоны модуля расположены в каталоге <em>app/templates/listings</em>.</p>
+</div>
+<div class="section" id="id4">
+<h2>Формы<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Форма для добавления и редактирования листинга описывается классом <strong>ListingForm</strong> в файле <em>app/blueprints/listings/forms.py</em>.
+Этот класс отвечает также за валидацию введённых пользователем данных.</p>
+<span class="target" id="module-app.blueprints.listings.forms"></span><dl class="class">
+<dt id="app.blueprints.listings.forms.ListingForm">
+<em class="property">class </em><code class="descclassname">app.blueprints.listings.forms.</code><code class="descname">ListingForm</code><span class="sig-paren">(</span><em>formdata=None</em>, <em>obj=None</em>, <em>prefix=''</em>, <em>data=None</em>, <em>meta=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.listings.forms.ListingForm" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Класс для генерации и валидации формы добавления/редактирования листинга.</p>
+<dl class="docutils">
+<dt>Атрибуты:</dt>
+<dd><ul class="first last simple">
+<li>city_id: Поле City.</li>
+<li>street_address: Поле Street name</li>
+<li>street_number: Поле Street Number</li>
+<li>suburb: Поле Suburb</li>
+<li>property_type: Поле Property type</li>
+<li>bedrooms: Поле Bedrooms</li>
+<li>government_value: Поле Government value</li>
+<li>current_rates: Поле Current rates</li>
+<li>median_rent_qv: Поле Median rent qv</li>
+<li>capital_growth : Поле Capital growth</li>
+<li>median_rent_tb: Поле Median rent tb</li>
+<li>agent_name: Поле Agent name</li>
+<li>agent_phone: Поле Agent phone</li>
+<li>agent_email: Поле Agent email</li>
+<li>appraised_by: Поле Appraised by</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.blueprints.listings.forms.validator_phone_numbers_or_email">
+<code class="descclassname">app.blueprints.listings.forms.</code><code class="descname">validator_phone_numbers_or_email</code><span class="sig-paren">(</span><em>form</em>, <em>field</em><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.listings.forms.validator_phone_numbers_or_email" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Валидатор для проверки заполненности одного из полей agent_phone или agent_email</p>
+</dd></dl>
+
+</div>
+<div class="section" id="javascript">
+<h2>Javascript<a class="headerlink" href="#javascript" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Исходный код для Javascript, который выполняется на веб-страницах модуля, находится в файле <em>static/js/listings.js</em>.</p>
+<p><em>Примечания</em>.</p>
+<p>На странице со списком листингов используется плагин <a class="reference external" href="https://datatables.net/">jQuery Datatables</a>, который настроен так, что данные запрашиваются
+динамически. Запрос производится на действие контроллера <strong>data()</strong>.</p>
+<p>На странице создания и редактирования листинга для реализации подсказок при заполнении используется
+плагин jQuery - <a class="reference external" href="https://github.com/bassjobsen/Bootstrap-3-Typeahead/">Bootstrap Typeahead</a>.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Модуль Listings</a><ul>
+<li><a class="reference internal" href="#id1">Модель</a></li>
+<li><a class="reference internal" href="#id2">Контроллер</a></li>
+<li><a class="reference internal" href="#id3">Шаблоны</a></li>
+<li><a class="reference internal" href="#id4">Формы</a></li>
+<li><a class="reference internal" href="#javascript">Javascript</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="database.html"
+                        title="предыдущая глава">База данных</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="agents.html"
+                        title="следующая глава">Модуль Agents</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/listings.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Искать" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="agents.html" title="Модуль Agents"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="database.html" title="База данных"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация houses for rent 0.0.1</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Alexandr Monastyretsky.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'layout/master.html' %}
+
+{% block title %}City Constants - Create{% endblock %}
+
+{% block page_header %}City Constants - Create{% endblock %}
+
+{% from "macros.html" import render_breadcrumbs %}
+{% block breadcrumbs %}
+    {% set breadcrumbs_data = [{'title': 'Cities', 'endpoint': 'cities.index', 'active': False},
+                               {'title': 'create', 'active': True}] %}
+    {{ render_breadcrumbs(breadcrumbs_data) }}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Create new city</h3>
+                </div>
+
+                {% include 'cities/_form.html' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

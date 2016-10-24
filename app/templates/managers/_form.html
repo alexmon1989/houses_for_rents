@@ -1,0 +1,17 @@
+{% from "_formhelpers.html" import render_field %}
+
+<form role="form" method="post" autocomplete="off">
+    <div class="box-body">
+        {{ render_field(form.name) }}
+        {{ render_field(form.agency, data_provide="typeahead") }}
+        {{ render_field(form.phone_numbers) }}
+        {{ render_field(form.email) }}
+        {{ render_field(form.rate) }}
+        {{ render_field(form.city_id, class_='form-control select2') }}
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer">
+        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+        <a class="btn btn-danger" href="{{ url_for('managers.index') }}"><i class="fa fa-close"></i> Cancel</a>
+    </div>
+</form>

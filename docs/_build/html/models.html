@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Модели &#8212; Документация houses for rent 0.0.1</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="top" title="Документация houses for rent 0.0.1" href="index.html" />
+    <link rel="prev" title="Модуль Cities" href="cities.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="cities.html" title="Модуль Cities"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация houses for rent 0.0.1</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>Модели<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Все классы, представленные ниже, являются моделями <strong>SQLAlchemy</strong>.
+Подробнее про работу с этой библиотекой (а именно её &#8220;обёрткой&#8221; для фреймворка Flask) можно почитать <a class="reference external" href="http://flask-sqlalchemy.pocoo.org/2.1/">тут</a>.</p>
+<p>Исходный код классов расположен в файле <cite>app/models.py</cite>.</p>
+<div class="section" id="listing">
+<span id="listing-model"></span><h2>Модель Listing<a class="headerlink" href="#listing" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Отвечает за взаимодействие с таблицей <cite>listings</cite>.</p>
+<span class="target" id="module-app.models"></span><dl class="class">
+<dt id="app.models.Listing">
+<em class="property">class </em><code class="descclassname">app.models.</code><code class="descname">Listing</code><span class="sig-paren">(</span><em>city_id</em>, <em>street_number</em>, <em>street_address</em>, <em>suburb</em>, <em>property_type</em>, <em>bedrooms</em>, <em>government_value=None</em>, <em>current_rates=None</em>, <em>median_rent_qv=None</em>, <em>capital_growth=None</em>, <em>median_rent_tb=None</em>, <em>agent_id=None</em>, <em>manager_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.Listing" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Класс модели для взаимодействия с таблицей БД <em>listings</em>.</p>
+<dl class="method">
+<dt id="app.models.Listing.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>city_id</em>, <em>street_number</em>, <em>street_address</em>, <em>suburb</em>, <em>property_type</em>, <em>bedrooms</em>, <em>government_value=None</em>, <em>current_rates=None</em>, <em>median_rent_qv=None</em>, <em>capital_growth=None</em>, <em>median_rent_tb=None</em>, <em>agent_id=None</em>, <em>manager_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.Listing.__init__" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Конструктор класса.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>city_id</strong> (<em>int</em>) &#8211; поле <em>city_id</em> в таблице. Внешний ключ для <cite>cities.id</cite>.</li>
+<li><strong>street_number</strong> (<em>str</em>) &#8211; поле <em>street_number</em> в таблице</li>
+<li><strong>street_address</strong> (<em>str</em>) &#8211; поле <em>street_address</em> в таблице</li>
+<li><strong>suburb</strong> (<em>str</em>) &#8211; поле <em>suburb</em> в таблице</li>
+<li><strong>property_type</strong> (<em>str</em>) &#8211; поле <em>property_type</em> в таблице</li>
+<li><strong>bedrooms</strong> (<em>int</em>) &#8211; поле <em>bedrooms</em> в таблице</li>
+<li><strong>government_value</strong> (<em>int</em>) &#8211; поле <em>government_value</em> в таблице</li>
+<li><strong>current_rates</strong> (<em>int</em>) &#8211; поле <em>current_rates</em> в таблице</li>
+<li><strong>median_rent_qv</strong> (<em>int</em>) &#8211; поле <em>median_rent_qv</em> в таблице</li>
+<li><strong>capital_growth</strong> (<em>float</em>) &#8211; поле <em>capital_growth</em> в таблице</li>
+<li><strong>median_rent_tb</strong> (<em>int</em>) &#8211; поле <em>median_rent_tb</em> в таблице</li>
+<li><strong>agent_id</strong> (<em>int</em>) &#8211; поле <em>agent_id</em> в таблице. Внешний ключ для <em>agents.id</em>.</li>
+<li><strong>manager_id</strong> (<em>int</em>) &#8211; поле <em>manager_id</em> в таблице. Внешний ключ для <em>managers.id</em>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="city">
+<span id="city-model"></span><h2>Модель City<a class="headerlink" href="#city" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="app.models.City">
+<em class="property">class </em><code class="descclassname">app.models.</code><code class="descname">City</code><span class="sig-paren">(</span><em>title</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.City" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Класс модели для взаимодействия с таблицей БД <em>cities</em>.</p>
+<dl class="method">
+<dt id="app.models.City.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>title</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.City.__init__" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Конструктор класса.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>title</strong> (<em>str</em>) &#8211; поле <em>title</em> в таблице.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="manager">
+<span id="manager-model"></span><h2>Модель Manager<a class="headerlink" href="#manager" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="app.models.Manager">
+<em class="property">class </em><code class="descclassname">app.models.</code><code class="descname">Manager</code><span class="sig-paren">(</span><em>name</em>, <em>city_id</em>, <em>agency=None</em>, <em>phone_numbers=None</em>, <em>rate=0</em>, <em>email=None</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.Manager" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Класс модели для взаимодействия с таблицей БД <em>managers</em>.</p>
+<dl class="method">
+<dt id="app.models.Manager.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>name</em>, <em>city_id</em>, <em>agency=None</em>, <em>phone_numbers=None</em>, <em>rate=0</em>, <em>email=None</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.Manager.__init__" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Конструктор класса.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) &#8211; поле <em>name</em> в таблице.</li>
+<li><strong>city_id</strong> (<em>int</em>) &#8211; поле <em>city_id</em> в таблице. Внешний ключ для <em>cities.id</em>.</li>
+<li><strong>agency</strong> (<em>str</em>) &#8211; поле <em>agency</em> в таблице.</li>
+<li><strong>phone_numbers</strong> (<em>str</em>) &#8211; поле <em>phone_numbers</em> в таблице.</li>
+<li><strong>rate</strong> (<em>float</em>) &#8211; поле <em>rate</em> в таблице.</li>
+<li><strong>email</strong> (<em>str</em>) &#8211; поле <em>email</em> в таблице.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="agent">
+<span id="agent-model"></span><h2>Модель Agent<a class="headerlink" href="#agent" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="app.models.Agent">
+<em class="property">class </em><code class="descclassname">app.models.</code><code class="descname">Agent</code><span class="sig-paren">(</span><em>name</em>, <em>city_id</em>, <em>agency=None</em>, <em>phone_numbers=None</em>, <em>email=None</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.Agent" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Класс модели для взаимодействия с таблицей БД <em>agents</em>.</p>
+<dl class="method">
+<dt id="app.models.Agent.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>name</em>, <em>city_id</em>, <em>agency=None</em>, <em>phone_numbers=None</em>, <em>email=None</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.Agent.__init__" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Конструктор класса.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) &#8211; поле <em>name</em> в таблице.</li>
+<li><strong>city_id</strong> (<em>int</em>) &#8211; поле <em>city_id</em> в таблице. Внешний ключ для <em>cities.id</em>.</li>
+<li><strong>agency</strong> (<em>str</em>) &#8211; поле <em>agency</em> в таблице.</li>
+<li><strong>phone_numbers</strong> (<em>str</em>) &#8211; поле <em>phone_numbers</em> в таблице.</li>
+<li><strong>email</strong> (<em>str</em>) &#8211; поле <em>email</em> в таблице.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Модели</a><ul>
+<li><a class="reference internal" href="#listing">Модель Listing</a></li>
+<li><a class="reference internal" href="#city">Модель City</a></li>
+<li><a class="reference internal" href="#manager">Модель Manager</a></li>
+<li><a class="reference internal" href="#agent">Модель Agent</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="cities.html"
+                        title="предыдущая глава">Модуль Cities</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/models.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Искать" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="cities.html" title="Модуль Cities"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация houses for rent 0.0.1</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Alexandr Monastyretsky.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+{% extends 'layout/master.html' %}
+
+{% block title %}City Constants Index{% endblock %}
+
+{% block page_header %}City Constants{% endblock %}
+
+{% from "macros.html" import render_breadcrumbs %}
+{% block breadcrumbs %}
+    {% set breadcrumbs_data = [{'title': 'Cities', 'endpoint': 'cities.index', 'active': False},
+                               {'title': 'index', 'active': True}] %}
+    {{ render_breadcrumbs(breadcrumbs_data) }}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Cities list</h3>
+                </div>
+                <div class="box-body">
+                    <p><a href="{{ url_for('cities.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Create</a></p>
+                    <table id="data" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                              <th>ID</th>
+                              <th>City</th>
+                              <th>Last update at</th>
+                              <th>Created at</th>
+                              <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for city in cities %}
+                            <tr>
+                                <td>{{ city.id }}</td>
+                                <td>{{ city.title }}</td>
+                                <td>{{ city.updated_at.strftime('%d.%m.%Y %H:%M:%S') }}</td>
+                                <td>{{ city.created_at.strftime('%d.%m.%Y %H:%M:%S') }}</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a title="Edit" href="{{ url_for('cities.edit', city_id=city.id) }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                                        <a title="Delete" href="{{ url_for('cities.delete', city_id=city.id) }}" class="btn btn-danger delete"><i class="fa fa-remove"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Модуль Managers &#8212; Документация houses for rent 0.0.1</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="top" title="Документация houses for rent 0.0.1" href="index.html" />
+    <link rel="next" title="Модуль Cities" href="cities.html" />
+    <link rel="prev" title="Модуль Agents" href="agents.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="cities.html" title="Модуль Cities"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="agents.html" title="Модуль Agents"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация houses for rent 0.0.1</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="managers">
+<h1>Модуль Managers<a class="headerlink" href="#managers" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="id1">
+<h2>Модель<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Основной моделью модуля является <a class="reference internal" href="models.html#manager-model"><span class="std std-ref">Модель Manager</span></a>.</p>
+</div>
+<div class="section" id="id2">
+<h2>Контроллер<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Исходный код контроллера модуля расположен в файле <em>app/blueprints/managers/views.py</em>.</p>
+<p>Методы контроллера:</p>
+<span class="target" id="module-app.blueprints.managers.views"></span><dl class="function">
+<dt id="app.blueprints.managers.views.create">
+<code class="descclassname">app.blueprints.managers.views.</code><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.managers.views.create" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Действие для отображения страницы и создания менеджера.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.blueprints.managers.views.delete">
+<code class="descclassname">app.blueprints.managers.views.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>manager_id</em><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.managers.views.delete" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Действие для удаления менеджера.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>manager_id</strong> (<em>int</em>) &#8211; id менеджера в таблице <em>managers</em></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.blueprints.managers.views.edit">
+<code class="descclassname">app.blueprints.managers.views.</code><code class="descname">edit</code><span class="sig-paren">(</span><em>manager_id</em><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.managers.views.edit" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Действие для отображения страницы и редактирования менеджера.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>manager_id</strong> (<em>int</em>) &#8211; id менеджера в таблице <em>managers</em></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.blueprints.managers.views.get_agencies">
+<code class="descclassname">app.blueprints.managers.views.</code><code class="descname">get_agencies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.managers.views.get_agencies" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает json с названиями агенств (поле <em>managers.agency</em>).
+Используется для автоподсказок в форме создания/редактирования менеджера.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Результат:</th><td class="field-body">json</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.blueprints.managers.views.get_manager_by_name">
+<code class="descclassname">app.blueprints.managers.views.</code><code class="descname">get_manager_by_name</code><span class="sig-paren">(</span><em>manager_name</em>, <em>city_id</em><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.managers.views.get_manager_by_name" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает json с данными менеджера, если он найден в БД по его имени в городе city_id.
+Используется для проверки существует ли менеджер при отправке формы создания/редактирования листинга.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>manager_name</strong> &#8211; Имя агента.</li>
+<li><strong>city_id</strong> &#8211; id города.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Результат:</th><td class="field-body"><p class="first last">json</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.blueprints.managers.views.get_names">
+<code class="descclassname">app.blueprints.managers.views.</code><code class="descname">get_names</code><span class="sig-paren">(</span><em>city_id</em><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.managers.views.get_names" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает json с именами менеджеров (поле <em>managers.name</em>) в городе <em>city_id</em>.
+Используется для автоподсказок в форме создания/редактирования листинга.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>city_id</strong> &#8211; Идентификатор города в таблице <em>cities</em>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Результат:</th><td class="field-body">json</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.blueprints.managers.views.index">
+<code class="descclassname">app.blueprints.managers.views.</code><code class="descname">index</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.managers.views.index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Действие для отображения страницы со списком менеджеров.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h2>Шаблоны<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Шаблоны модуля расположены в каталоге <em>app/templates/managers</em>.</p>
+</div>
+<div class="section" id="id4">
+<h2>Формы<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Форма для добавления и редактирования листинга описывается классом <strong>ManagerForm</strong> в файле <em>app/blueprints/managers/forms.py</em>.
+Этот класс отвечает также за валидацию введённых пользователем данных.</p>
+<span class="target" id="module-app.blueprints.agents.forms"></span><dl class="class">
+<dt id="app.blueprints.agents.forms.AgentForm">
+<em class="property">class </em><code class="descclassname">app.blueprints.agents.forms.</code><code class="descname">AgentForm</code><span class="sig-paren">(</span><em>formdata=None</em>, <em>obj=None</em>, <em>prefix=''</em>, <em>data=None</em>, <em>meta=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.agents.forms.AgentForm" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Класс для генерации и валидации формы добавления/редактирования агентов.</p>
+<dl class="docutils">
+<dt>Атрибуты:</dt>
+<dd><ul class="first last simple">
+<li>name: Поле Name.</li>
+<li>agency: Поле Agency.</li>
+<li>phone_numbers: Поле Phone numbers.</li>
+<li>email: Поле Email.</li>
+<li>city_id: Поле City.</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="app.blueprints.agents.forms.RequiredWithoutValidator">
+<em class="property">class </em><code class="descclassname">app.blueprints.agents.forms.</code><code class="descname">RequiredWithoutValidator</code><span class="sig-paren">(</span><em>field</em>, <em>message=None</em><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.agents.forms.RequiredWithoutValidator" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Валидатор, который проверяет следующее условие:
+проверяемое поле должно присутствовать и иметь непустое значение,
+но только если не присутствует или имеет пустое значение указанное полей</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.blueprints.agents.forms.validator_phone_numbers_or_email">
+<code class="descclassname">app.blueprints.agents.forms.</code><code class="descname">validator_phone_numbers_or_email</code><span class="sig-paren">(</span><em>form</em>, <em>field</em><span class="sig-paren">)</span><a class="headerlink" href="#app.blueprints.agents.forms.validator_phone_numbers_or_email" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Валидатор для проверки заполненности одного из полей phone_numbers или email</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Модуль Managers</a><ul>
+<li><a class="reference internal" href="#id1">Модель</a></li>
+<li><a class="reference internal" href="#id2">Контроллер</a></li>
+<li><a class="reference internal" href="#id3">Шаблоны</a></li>
+<li><a class="reference internal" href="#id4">Формы</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="agents.html"
+                        title="предыдущая глава">Модуль Agents</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="cities.html"
+                        title="следующая глава">Модуль Cities</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/managers.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Искать" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="cities.html" title="Модуль Cities"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="agents.html" title="Модуль Agents"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация houses for rent 0.0.1</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Alexandr Monastyretsky.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
+    </div>
+  </body>
+</html>
