@@ -61,6 +61,9 @@
 Поскольку в качестве Web-сервера можно использовать различное программное обеспечение, то подразумевается,
 что настройка будет производится системным администратором. Руководства по настройке от разработчиков фреймворка <strong>Flask</strong>
 можно посмотреть <a class="reference external" href="http://flask.pocoo.org/docs/0.11/deploying/">тут</a>.</p>
+<p>Если выбран вариант со связкой <strong>nginx</strong> + <strong>uWSGI</strong>, то следует учитывать, что файлы для конфигурации uwsgi
+находятся в корне каталога проекта и называются <em>uwsgi.ini.example</em>, <em>project.service.example</em>.
+Для работы их стоит переименовать на <em>uwsgi.ini</em>, <em>project.service</em> и отредактировать при необходимости.</p>
 <p>Установку условно можно разделить на несколько этапов:</p>
 <div class="section" id="git">
 <h2>Клонирование git-репозитория<a class="headerlink" href="#git" title="Ссылка на этот заголовок">¶</a></h2>
@@ -126,7 +129,7 @@
 <div class="section" id="id6">
 <h2>Применение миграций<a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Для создания структуры БД необходимо воспользоваться механизмом миграций. Для этого выполните команду:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>python3 manage.py migrate upgrade
+<div class="highlight-bash"><div class="highlight"><pre><span></span>python3 manage.py db upgrade
 </pre></div>
 </div>
 </div>
