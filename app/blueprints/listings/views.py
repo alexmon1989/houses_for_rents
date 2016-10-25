@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, jsonify, request, url_for, flash, redirect
+from sqlalchemy import or_
 from app import db
 from app.models import Listing, Manager, Agent, City
 from datatables import ColumnDT, DataTables
@@ -30,12 +31,17 @@ def create():
         # Получение agent по введенным реквизитам
         agent_id = None
         if form.agent_name.data:
-            agent = Agent.query.filter_by(name=form.agent_name.data,
-                                          email=form.agent_email.data,
-                                          phone_numbers=form.agent_phone.data).first()
+            agent = Agent.query.filter(Agent.name == form.agent_name.data,
+                                       or_(Agent.email == form.agent_email.data,
+                                           Agent.phone_numbers == form.agent_phone.data)).first()
             if agent:
                 # Если агент существует в БД, то получение его id
                 agent_id = agent.id
+                if form.agent_email.data != '' and agent.email != form.agent_email.data:
+                    agent.email = form.agent_email.data
+                if form.agent_phone.data != '' and agent.phone_numbers != form.agent_phone.data:
+                    agent.phone_numbers = form.agent_phone.data
+                db.session.commit()
             else:
                 # Создание agent
                 agent = Agent(name=form.agent_name.data,
@@ -90,12 +96,17 @@ def edit(listing_id):
     form.city_id.choices = [(c.id, c.title) for c in City.query.order_by('title')]
     if request.method == 'POST' and form.validate():
         # Получение agent по введенным реквизитам
-        agent = Agent.query.filter_by(name=form.agent_name.data,
-                                      email=form.agent_email.data,
-                                      phone_numbers=form.agent_phone.data).first()
+        agent = Agent.query.filter(Agent.name == form.agent_name.data,
+                                   or_(Agent.email == form.agent_email.data,
+                                       Agent.phone_numbers == form.agent_phone.data)).first()
         if agent:
             # Если агент существует в БД, то получение его id
             agent_id = agent.id
+            if form.agent_email.data != '' and agent.email != form.agent_email.data:
+                agent.email = form.agent_email.data
+            if form.agent_phone.data != '' and agent.phone_numbers != form.agent_phone.data:
+                agent.phone_numbers = form.agent_phone.data
+            db.session.commit()
         else:
             # Создание agent
             agent = Agent(name=form.agent_name.data,
