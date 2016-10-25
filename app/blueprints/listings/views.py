@@ -163,10 +163,10 @@ def data():
     columns.append(ColumnDT('created_at'))
 
     # Инициализация запроса
-    query = db.session.query(Listing)
-    query.join(City, City.id == Listing.city_id)
-    query.outerjoin(Manager, Manager.id == Listing.manager_id)
-    query.outerjoin(Agent, Agent.id == Listing.agent_id)
+    query = db.session.query(Listing)\
+        .join(City, City.id == Listing.city_id)\
+        .outerjoin(Manager, Manager.id == Listing.manager_id)\
+        .outerjoin(Agent, Agent.id == Listing.agent_id)
 
     # Инициализация объекта DataTables и получение результатов для вывода
     row_table = DataTables(request.args, Listing, query, columns)
