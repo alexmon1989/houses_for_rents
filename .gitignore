@@ -3,3 +3,6 @@
 __pycache__
 
 config.py
+uwsgi.ini
+project.service
+error.log

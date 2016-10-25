@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI instance to serve python-project
+After=network.target
+
+[Service]
+User=project
+Group=nginx
+WorkingDirectory=/home/project/houses_for_rents
+Environment="PATH=/home/project/houses_for_rents/.env/bin"
+ExecStart=/home/project/houses_for_rents/.env/bin/uwsgi --ini uwsgi.ini
+
+[Install]
+WantedBy=multi-user.target

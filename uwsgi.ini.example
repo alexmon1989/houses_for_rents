@@ -1,0 +1,10 @@
+[uwsgi]
+module = WSGI:app
+master = true
+processes = 5
+socket = project.sock
+chmod-socket = 660
+vacuum = true
+die-on-term = true
+logto = /home/project/houses_for_rents/error.log
+buffer-size = 32768
