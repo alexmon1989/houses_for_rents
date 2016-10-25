@@ -87,11 +87,15 @@ def edit(listing_id):
     :type listing_id: int
     """
     listing = Listing.query.get_or_404(listing_id)
+    try:
+        appraised_by = listing.manager.name
+    except AttributeError:
+        appraised_by = ''
     form = ListingForm(request.form, listing, data={
         'agent_name': listing.agent.name,
         'agent_phone': listing.agent.phone_numbers,
         'agent_email': listing.agent.email,
-        'appraised_by': listing.manager.name,
+        'appraised_by': appraised_by,
     })
     form.city_id.choices = [(c.id, c.title) for c in City.query.order_by('title')]
     if request.method == 'POST' and form.validate():
@@ -118,8 +122,10 @@ def edit(listing_id):
             agent_id = agent.id
 
         # Получение manager_id
-        manager = Manager.query.filter_by(name=form.appraised_by.data).first()
-        manager_id = manager.id
+        manager_id = None
+        if form.appraised_by.data:
+            manager = Manager.query.filter_by(name=form.appraised_by.data).first()
+            manager_id = manager.id
 
         # Заполнение listing значениями формы и сохранение
         form.populate_obj(listing)
