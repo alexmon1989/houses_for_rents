@@ -75,6 +75,12 @@
 | **Character set**: utf8 -- UTF-8 Unicode
 | **Collation**: utf8_unicode_ci
 
+БД можно создать следующим SQL-запросом:
+
+.. code-block:: sql
+
+    CREATE DATABASE IF NOT EXISTS `houses_for_rent` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
 Настройка подключения к MySQL
 -----------------------------
 
